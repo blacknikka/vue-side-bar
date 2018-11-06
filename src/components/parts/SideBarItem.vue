@@ -6,6 +6,9 @@
     <div class="sub-text">
       {{sub}}
     </div>
+    <div v-if="isReady" class="hover-item">
+      Under Construction.
+    </div>
   </div>
 </template>
 
@@ -19,8 +22,20 @@ export default {
     },
     sub: {
       type: String,
-      require: false,
+      require: true,
       default: '',
+    },
+    state: {
+      type: String,
+      require: true,
+      default: '',
+    },
+  },
+  computed: {
+    isReady() {
+      // check the state of this item.
+      // If state is not 'ready', this item don't show.
+      return this.state !== 'ready';
     },
   },
 };
@@ -50,5 +65,13 @@ div {
 }
 .sub-text {
   font-size: 20px;
+}
+
+.hover-item {
+  color: red;
+  display: none;
+}
+.container:hover + .hover-item {
+  display: block;
 }
 </style>
