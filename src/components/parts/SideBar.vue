@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <slide right noOverlay>
-      <side-bar-item v-for="(item, index) in list" :key="index" :main="item.main" :sub="item.sub">
-      </side-bar-item>
-    </slide>
-  </div>
+  <slide right PushRotate>
+    <side-bar-item v-for="(item, index) in list" :key="index" :main="item.main" :sub="item.sub">
+    </side-bar-item>
+  </slide>
 </template>
 
 <script>
@@ -13,19 +11,19 @@ import SideBarItem from '@/components/parts/SideBarItem';
 
 const itemList = [
   {
-    main: 'home',
-    sub: '',
+    main: 'Home',
+    sub: 'go to home',
   },
   {
-    main: 'games',
+    main: 'Games',
     sub: 'play games',
   },
   {
-    main: 'company',
+    main: 'Company',
     sub: 'about us',
   },
   {
-    main: 'contact',
+    main: 'Contact',
     sub: 'send a mail',
   },
 ];
